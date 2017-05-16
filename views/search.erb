@@ -1,6 +1,16 @@
 <div class="search-form">
-    <form class="" action="/search" method="post">
-        <input type="text" name="search_key" placeholder="Search category">
+    <form id="search-blog-posts" action="/search" method="post">
+        <!-- <input type="text" name="search_key" placeholder="Search category"> -->
+        <select form="search-blog-posts" class="search-form__category-dropdown" name="category">
+            <option value="">Search category</option>
+
+            <% @categories.each do |category| %>
+
+                <option value="<%= category %>"><%= category %></option>
+
+            <% end %>
+
+        </select>
         <input type="submit">
     </form>
 </div>
@@ -23,6 +33,7 @@
                     </div>
                 </div>
             <% end %>
+
         <% else %>
             Sorry, no results match your search.
         <% end %>
