@@ -1,0 +1,23 @@
+<% @blogs.each do |blog| %>
+
+    <div class="">
+        <%= blog.title %>
+    </div>
+    <div class="">
+        <%= blog.category %>
+    </div>
+    <div class="">
+        <%= blog.content %>
+    </div>
+
+<% end %>
+
+
+<div class="">
+    <form class="" action="/new_blog" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="category" placeholder="Category">
+        <input type="text" name="content" placeholder="Content">
+        <input type="submit">
+    </form>
+</div>

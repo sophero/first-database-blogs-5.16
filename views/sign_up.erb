@@ -1,0 +1,22 @@
+<div class="sign-up-form__container">
+    <form class="sign-up-form" action="/sign_up" method="post">
+        <input type="text" name="fname" placeholder="First name">
+        <input type="text" name="lname" placeholder="Last name">
+        <input type="text" name="email" placeholder="Email address">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit">
+    </form>
+</div>
+
+<div class="users-list">
+    <% if @users %>
+        <% @users.each do |user| %>
+
+        <div class="user">
+            <%= "#{user.fname} #{user.lname}" %>
+            <%= user.email %>
+        </div>
+
+        <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="search-form">
+    <form class="" action="/search" method="post">
+        <input type="text" name="search_key" placeholder="Search category">
+        <input type="submit">
+    </form>
+</div>
+
+
+<div class="search-results__container">
+    <% if @search_results %>
+        <% if @search_results.length > 0 %>
+
+            <% @search_results.each do |result| %>
+                <div class="search-result">
+                    <div class="search-result__title">
+                        <%= result.title %>
+                    </div>
+                    <div class="search-result__category">
+                        <%= result.category %>
+                    </div>
+                    <div class="search-result__content">
+                        <%= result.content %>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            Sorry, no results match your search.
+        <% end %>
+    <% end %>
+</div>

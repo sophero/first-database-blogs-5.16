@@ -1,0 +1,10 @@
+SQLITE3 Notes
+
+using class Blog as the example, for database table 'blogs' (see schema.rb).
+
+Blog.all
+Blog.where(category: "Food")
+Blog.find(id#)
+
+Blog.new
+Blog.create same as above but actually commits it to the database.
