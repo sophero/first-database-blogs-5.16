@@ -1,5 +1,5 @@
 <div class="search-form">
-    <form id="search-blog-posts" action="/search" method="post">
+    <form id="search-blog-posts" action="/search" method="get">
         <!-- <input type="text" name="search_key" placeholder="Search category"> -->
         <select form="search-blog-posts" class="search-form__category-dropdown" name="category">
             <option value="">Search category</option>
@@ -17,7 +17,7 @@
 
 
 <div class="search-results__container">
-    <% if @search_results %>
+    <% if @search_results != ""%>
         <% if @search_results.length > 0 %>
 
             <% @search_results.each do |result| %>

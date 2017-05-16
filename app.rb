@@ -19,20 +19,12 @@ post '/new_blog' do
 end
 
 get '/search' do
-    @blogs = Blog.all
-    @categories = []
-    @blogs.each do |blog|
-        category = blog.category
-        if !@categories.include? category
-            @categories.push(category)
-        end
-    end
-    erb :search
-end
-
-post '/search' do
     p params
-    @search_results = Blog.where(category: params[:category])
+    if params[:category]
+        @search_results = Blog.where(category: params[:category])
+    else
+        @search_results = ""
+    end
     p @search_results
 
     @blogs = Blog.all
