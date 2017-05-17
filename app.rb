@@ -19,13 +19,11 @@ post '/new_blog' do
 end
 
 get '/search' do
-    p params
     if params[:category]
         @search_results = Blog.where(category: params[:category])
     else
         @search_results = ""
     end
-    p @search_results
 
     @blogs = Blog.all
     @categories = []
